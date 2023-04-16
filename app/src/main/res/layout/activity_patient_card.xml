@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    tools:context=".feature.activities.PatientCardActivity">
+
+    <TextView
+        android:id="@+id/tv111"
+        android:layout_width="240dp"
+
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/bold"
+        android:text="Создание карты пациента"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/skipText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
+        android:lineHeight="20dp"
+        android:text="Пропустить"
+        android:textColor="#1A6FEE"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv111"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv111" />
+
+    <TextView
+        android:id="@+id/some_id"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:gravity="top"
+        android:text="Без карты пациента вы не сможете заказать анализы."
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv111"
+        app:layout_constraintTop_toBottomOf="@+id/tv111" />
+
+    <TextView
+        android:id="@+id/tv333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:gravity="top"
+        android:text="В картах пациентов будут храниться результаты анализов вас и ваших близких."
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/some_id"
+        app:layout_constraintTop_toBottomOf="@+id/some_id" />
+
+    <EditText
+        android:id="@+id/e1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edittext"
+        android:hint="Имя"
+        android:padding="14dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/tv333"
+        app:layout_constraintTop_toBottomOf="@id/tv333" />
+
+    <EditText
+        android:id="@+id/e2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittext"
+        android:hint="Фамилия"
+        android:padding="14dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/e1"
+        app:layout_constraintTop_toBottomOf="@id/e1" />
+
+    <EditText
+        android:id="@+id/e3"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittext"
+        android:hint="Отчество"
+        android:padding="14dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/e2"
+        app:layout_constraintTop_toBottomOf="@id/e2" />
+
+    <EditText
+        android:id="@+id/e4"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittext"
+        android:hint="Дата рождения"
+        android:padding="14dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/e3"
+        app:layout_constraintTop_toBottomOf="@id/e3" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/spinner"
+        app:layout_constraintStart_toStartOf="@id/e4"
+        app:layout_constraintTop_toBottomOf="@id/e4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn"
+        android:fontFamily="@font/semibold"
+        android:text="Создать"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
