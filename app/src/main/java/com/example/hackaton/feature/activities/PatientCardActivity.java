@@ -1,11 +1,15 @@
 package com.example.hackaton.feature.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -16,13 +20,28 @@ import java.util.List;
 
 public class PatientCardActivity extends AppCompatActivity {
 
-    Spinner spinner;
-    TextView skip;
+    private Spinner spinner;
+    private TextView skip;
+    private EditText name;
+    private EditText lastname;
+    private EditText mname;
+    private EditText bith;
+    private String sex;
+    private AppCompatButton save;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_card);
+
+        name = findViewById(R.id.e1);
+        lastname = findViewById(R.id.e2);
+        mname = findViewById(R.id.e3);
+        bith = findViewById(R.id.e4);
+
+        save = findViewById(R.id.save);
 
         spinner = findViewById(R.id.spinner);
         List<String> arr = new ArrayList<>();
@@ -41,5 +60,89 @@ public class PatientCardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                enableSubmitIfReady();
+            }
+        });
+
+        lastname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                enableSubmitIfReady();
+            }
+        });
+
+        mname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                enableSubmitIfReady();
+            }
+        });
+        bith.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                enableSubmitIfReady();
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+    }
+    public void enableSubmitIfReady() {
+
+        boolean first = name.getText().toString().length() > 3;
+        boolean second = lastname.getText().toString().length() > 3;
+        boolean third = mname.getText().toString().length() > 3;
+        boolean fourth = bith.getText().toString().length() > 3;
+        save.setEnabled(first && second && third && fourth);
     }
 }
