@@ -89,19 +89,6 @@ public class CustomBannerAdapter extends RecyclerView.Adapter<CustomBannerAdapte
         Banner b = localDataSet.get(position);
 
 
-
-        /*Glide.with(this)
-                .asBitmap()
-                .load(path)
-                .into(new CustomTarget<Bitmap>() {
-                    @Override
-                    public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
-                        imageView.setImageBitmap(resource);
-                    }
-                    @Override
-                    public void onLoadCleared(@Nullable Drawable placeholder) {
-                    }
-                });*/
         Glide.with(context).load(b.getImage()).into(new CustomTarget<Drawable>() {
             @Override
             public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
@@ -115,15 +102,19 @@ public class CustomBannerAdapter extends RecyclerView.Adapter<CustomBannerAdapte
         });
 
         viewHolder.getName().setText(b.getName());
-        viewHolder.getCol().setText(b.getDescription());
+        if(viewHolder.getCol().length() > 10){
+            viewHolder.getCol().setText("3 исследования");
+        }
+        else{
+            viewHolder.getCol().setText(b.getDescription());
+        }
+
         viewHolder.getSum().setText(b.getPrice() + "₽");
 
 
-        //viewHolder.getCardView().setBackground(); // ВСТАВИТЬ ПИКЧУ
 
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return localDataSet.size();
