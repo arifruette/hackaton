@@ -1,5 +1,7 @@
 package com.example.hackaton.model;
 
+import androidx.exifinterface.media.ExifInterface;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -15,7 +17,7 @@ public class User {
 
     @SerializedName("middlename")
     @Expose
-    private String midname;
+    private String middlename;
 
     @SerializedName("bith")
     @Expose
@@ -24,6 +26,10 @@ public class User {
     @SerializedName("sex")
     @Expose
     private String sex;
+
+    @SerializedName("imageUrl")
+    @Expose
+    private String imageUrl;
 
 
     public String getName() {
@@ -35,7 +41,7 @@ public class User {
     }
 
     public String getMidname() {
-        return midname;
+        return middlename;
     }
 
     public String getBith() {
@@ -54,8 +60,8 @@ public class User {
         this.bith = bith;
     }
 
-    public void setMidname(String midname) {
-        this.midname = midname;
+    public void setMiddlename(String midname) {
+        this.middlename = midname;
     }
 
     public void setLastname(String lastname) {
@@ -64,5 +70,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

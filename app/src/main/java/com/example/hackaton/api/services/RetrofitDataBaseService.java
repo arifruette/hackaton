@@ -1,17 +1,20 @@
 package com.example.hackaton.api.services;
 
+import com.example.hackaton.api.userapi.PostApi;
+import com.example.hackaton.api.userapi.UserAPI;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
 
 public class RetrofitDataBaseService {
     private static RetrofitDataBaseService instance = null;
-    private Api myApi;
+    private PostApi myApi;
 
     private RetrofitDataBaseService() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(Api.BASE_URL)
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(PostApi.BASE_URL)
                 .addConverterFactory(MoshiConverterFactory.create())
                 .build();
-        myApi = retrofit.create(Api.class);
+        myApi = retrofit.create(PostApi.class);
     }
 
     public static synchronized RetrofitDataBaseService getInstance() {
@@ -21,7 +24,7 @@ public class RetrofitDataBaseService {
         return instance;
     }
 
-    public Api getMyApi() {
+    public PostApi getMyApi() {
         return myApi;
     }
 }

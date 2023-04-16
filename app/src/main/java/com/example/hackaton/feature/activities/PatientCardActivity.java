@@ -14,9 +14,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.hackaton.R;
+import com.example.hackaton.api.services.RetrofitDataBaseService;
+import com.example.hackaton.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PatientCardActivity extends AppCompatActivity {
 
@@ -132,7 +138,24 @@ public class PatientCardActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                User user = new User();
+                user.setName(name.getText().toString());
+                user.setLastname(lastname.getText().toString());
+                user.setMiddlename(mname.getText().toString());
+                user.setBith(bith.getText().toString());
+                user.setSex(spinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString());
+                Call<User> call = RetrofitDataBaseService.getInstance().getMyApi().addUser(user);
+                call.enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        System.out.println(response.code());
+                    }
 
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+
+                    }
+                });
             }
         });
 
