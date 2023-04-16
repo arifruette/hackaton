@@ -1,4 +1,4 @@
-package com.example.hackaton.feature.activities;
+package com.example.hackaton.feature.activities.mainscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;

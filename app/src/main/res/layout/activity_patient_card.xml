@@ -7,7 +7,7 @@
     android:paddingTop="20dp"
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
-    tools:context=".feature.activities.PatientCardActivity">
+    tools:context=".feature.activities.login.PatientCardActivity">
 
     <TextView
         android:id="@+id/tv111"

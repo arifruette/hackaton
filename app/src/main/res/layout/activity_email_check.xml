@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.activities.EmailCheckActivity">
+    tools:context=".feature.activities.login.EmailCheckActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -85,6 +85,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:text="проверить"
+            android:alpha="0"
+            android:enabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et2" />
@@ -100,6 +102,7 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="175dp"
         android:text="TextView"
+        android:alpha="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />

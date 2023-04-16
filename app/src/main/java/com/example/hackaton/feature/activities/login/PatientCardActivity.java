@@ -1,4 +1,4 @@
-package com.example.hackaton.feature.activities;
+package com.example.hackaton.feature.activities.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.hackaton.R;
 import com.example.hackaton.api.services.RetrofitDataBaseService;
+import com.example.hackaton.feature.activities.mainscreen.MainPageActivity;
 import com.example.hackaton.model.User;
 
 import java.util.ArrayList;

@@ -1,24 +1,32 @@
 package com.example.hackaton.feature.adapters;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.example.hackaton.R;
 import com.example.hackaton.model.Banner;
+import com.example.hackaton.model.Order;
 
 import java.util.List;
 
 public class CustomBannerAdapter extends RecyclerView.Adapter<CustomBannerAdapter.ViewHolder>{
     private List<Banner> localDataSet;
+    private Context context;
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder)
-     */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView getName() {
             return name;
@@ -36,6 +44,9 @@ public class CustomBannerAdapter extends RecyclerView.Adapter<CustomBannerAdapte
         private final TextView col;
         private final TextView sum;
 
+        private final CardView card;
+
+
 
 
 
@@ -46,23 +57,20 @@ public class CustomBannerAdapter extends RecyclerView.Adapter<CustomBannerAdapte
             name = (TextView) view.findViewById(R.id.namespace);
             col = (TextView) view.findViewById(R.id.colvo);
             sum = (TextView) view.findViewById(R.id.price);
-
-
-
+            card = (CardView) view.findViewById(R.id.cardView);
         }
 
 
+
     }
 
-    /**
-     * Initialize the dataset of the Adapter
-     *
-     * @param dataSet String[] containing the data to populate views to be used
-     * by RecyclerView
-     */
-    public CustomBannerAdapter(List<Banner> dataSet) {
+
+    public CustomBannerAdapter(List<Banner> dataSet, Context c) {
         localDataSet = dataSet;
+        context = c;
     }
+
+
 
     // Create new views (invoked by the layout manager)
     @Override
@@ -94,8 +102,18 @@ public class CustomBannerAdapter extends RecyclerView.Adapter<CustomBannerAdapte
                     public void onLoadCleared(@Nullable Drawable placeholder) {
                     }
                 });*/
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
+        Glide.with(context).load(b.getImage()).into(new CustomTarget<Drawable>() {
+            @Override
+            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                viewHolder.card.setBackground(resource);
+            }
+
+            @Override
+            public void onLoadCleared(@Nullable Drawable placeholder) {
+
+            }
+        });
+
         viewHolder.getName().setText(b.getName());
         viewHolder.getCol().setText(b.getDescription());
         viewHolder.getSum().setText(b.getPrice() + "₽");

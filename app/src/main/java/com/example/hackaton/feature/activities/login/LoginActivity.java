@@ -1,4 +1,4 @@
-package com.example.hackaton.feature.activities;
+package com.example.hackaton.feature.activities.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +22,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText email;
     private AppCompatButton btn_continue;
-    private AppCompatButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         btn_continue = findViewById(R.id.next);
 
 
-        btn = findViewById(R.id.prank);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), PatientCardActivity.class);
-                startActivity(intent);
-            }
-        });
-
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                         if (response.code() == 200) {
-                            Intent i = new Intent(LoginActivity.this, PatientCardActivity.class);
+                            Intent i = new Intent(LoginActivity.this, EmailCheckActivity.class);
                             i.putExtra("emailStr", email.getText().toString());
                             startActivity(i);
                         } else {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.activities.LoginActivity">
+    tools:context=".feature.activities.login.LoginActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -87,10 +87,5 @@
         android:id="@+id/next"
 
         />
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/btn"
-        android:id="@+id/prank"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

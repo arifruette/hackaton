@@ -15,16 +15,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".feature.activities.PatientCardActivity"
+            android:name=".feature.activities.login.PatientCardActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.activities.MainPageActivity"
+            android:name=".feature.activities.mainscreen.MainPageActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.activities.EmailCheckActivity"
+            android:name=".feature.activities.login.EmailCheckActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.activities.LoginActivity"
+            android:name=".feature.activities.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".feature.activities.mainscreen.KorzinaActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
