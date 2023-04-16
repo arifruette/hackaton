@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.hackaton.R;
-import com.example.hackaton.api.emaicode.EmailCodeAPI;
+import com.example.hackaton.api.emailcode.EmailCodeAPI;
 import com.example.hackaton.feature.activities.mainscreen.MainPageActivity;
 import com.example.hackaton.model.CodeResponse;
 import com.google.gson.Gson;

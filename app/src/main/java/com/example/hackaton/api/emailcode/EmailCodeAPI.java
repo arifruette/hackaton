@@ -1,4 +1,4 @@
-package com.example.hackaton.api.emaicode;
+package com.example.hackaton.api.emailcode;
 
 import com.example.hackaton.api.services.RetroFitService;
 import com.example.hackaton.api.userapi.UserAPI;

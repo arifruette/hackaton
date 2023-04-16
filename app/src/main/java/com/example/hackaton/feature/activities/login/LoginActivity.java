@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.hackaton.R;
-import com.example.hackaton.api.emaicode.EmailCodeAPI;
+import com.example.hackaton.api.emailcode.EmailCodeAPI;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

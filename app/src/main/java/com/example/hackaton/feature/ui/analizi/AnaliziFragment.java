@@ -1,7 +1,6 @@
 package com.example.hackaton.feature.ui.analizi;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,9 +14,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.hackaton.api.emaicode.EmailCodeAPI;
+import com.example.hackaton.api.emailcode.EmailCodeAPI;
 import com.example.hackaton.feature.activities.mainscreen.KorzinaActivity;
 import com.example.hackaton.feature.adapters.CatalogAdapter;
 import com.example.hackaton.feature.adapters.CustomBannerAdapter;
